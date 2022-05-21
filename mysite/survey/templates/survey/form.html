@@ -1,0 +1,30 @@
+<form
+  hx-post="{% url 'survey:handler' cust_id question.id %}"
+  hx-swap='outerHTML'
+  >
+    {% csrf_token %}
+    <label>{{ question.id }}. </label>
+    <label>{{ question.text }}</label><br>
+    <input type="text" name="ans"><br><br>
+    <button 
+        type="submit" 
+        name="action" 
+        value="previous">
+        Previous
+    </button>
+    {% if islast %}
+        <button
+            type="submit" 
+            name="action" 
+            value="submit">
+            Submit
+        </button>
+    {% else %}
+        <button
+            type="submit" 
+            name="action" 
+            value="next">
+            Next
+        </button>
+    {% endif %}
+</form>

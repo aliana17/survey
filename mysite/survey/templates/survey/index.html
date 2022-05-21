@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Survey</title>
+    </head>
+    <body>
+        <div style="text-align:center;" >
+            <div id="parent-div">
+                <h1 >Welcome to the survey!</h1>
+                <button
+                hx-get="{% url 'survey:start' %}"
+                hx-trigger="click" 
+                hx-target="#parent-div"
+                hx-swap="outerHTML"
+                >
+                START
+                </button>
+            </div>
+        </div>
+        <script src="https://unpkg.com/htmx.org@1.7.0" integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous" defer></script>
+        <!--{% load static %}
+        <script src="{% static 'survey/htmx.min.js' %" defer></script>-->
+    </body>
+</html>
